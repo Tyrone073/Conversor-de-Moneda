@@ -6,25 +6,19 @@ import java.util.List;
 
 public class ListaTemperatura {
 	
-    private Collection<Moneda> temperaturaList = new ArrayList<>();
+    private Collection<Agrega> temperaturaList = new ArrayList<>();
 
     public ListaTemperatura() {
-        Moneda celsius = new Moneda("Celsius", 1.0);
-        Moneda fahrenheit = new Moneda("Fahrenheit", 0.84);
-        Moneda kelvin = new Moneda("Kelvin", 0.73);
-        Moneda yen = new Moneda("Yen japones", 118.3);
-        Moneda won = new Moneda("Won surcoreano", 1117.8);
-
+        Agrega celsius = new Agrega("Celsius", 1.0);
+        Agrega fahrenheit = new Agrega("Fahrenheit", 0.84);
+        Agrega kelvin = new Agrega("Kelvin", 0.73);
+       
         temperaturaList.add(celsius);
         temperaturaList.add(fahrenheit);
         temperaturaList.add(kelvin);
-        temperaturaList.add(yen);
-        temperaturaList.add(won);
-
+        
     }
-
-    public Collection<Moneda> getMonedaList() {
-        return monedaList;
-    }
-    
+	public Collection<Agrega> getTemperaturaList() {
+		return temperaturaList;
+	}
 }

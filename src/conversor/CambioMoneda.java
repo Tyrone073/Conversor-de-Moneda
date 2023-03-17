@@ -19,15 +19,15 @@ public class CambioMoneda {
 	Object[] lista = listaMonedas.getMonedaList().toArray();//aqui se transforma esa intancia para q se pueda utilizar en la seleccion
 	
 	
-	private Moneda monedaDestino;
-	private Moneda monedaOrigen;
+	private Agrega monedaDestino;
+	private Agrega monedaOrigen;
 	private double cantidad;
 	 
 	
 	
 	public void mostrarInterfaz() {	
 		while (true) {
-			monedaOrigen = (Moneda) JOptionPane.showInputDialog(null, "Selecciona una moneda que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
+			monedaOrigen = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
 				if (monedaOrigen == null) { // Si se presionó el botón "Cancelar"
 			        System.exit(0); // Termina el programa
 			    }else {
@@ -36,7 +36,7 @@ public class CambioMoneda {
 				        //System.exit(0); // Termina el programa
 			    	return;
 				    }
-			    	monedaDestino = (Moneda) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
+			    	monedaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
 						if (monedaDestino == null) { // Si se presionó el botón "Cancelar"
 				        //System.exit(0); // Termina el programa
 						return;
