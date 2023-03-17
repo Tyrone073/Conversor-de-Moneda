@@ -13,22 +13,22 @@ import javax.swing.JPanel;
 
 //import ejecutor.JComboBox;
 
-public class CambioMoneda {
+public class ConversorTemperatura {
 
-	ListaMonedas listaMonedas = new ListaMonedas();//esto es para crear una intancia de la lista
-	Object[] lista = listaMonedas.getMonedaList().toArray();//aqui se transforma esa intancia para q se pueda utilizar en la seleccion
+	ListaTemperatura listaTemperatura = new ListaTemperatura();//esto es para crear una intancia de la lista
+	Object[] lista = listaTemperatura.getTemperaturaList().toArray();//aqui se transforma esa intancia para q se pueda utilizar en la seleccion
 	
 	
-	private Agrega monedaDestino;
-	private Agrega monedaOrigen;
+	private Agrega temperaturtaDestino;
+	private Agrega temperaturaOrigen;
 	private double cantidad;
 	 
 	
 	
 	public void mostrarInterfaz() {	
 		while (true) {
-			monedaOrigen = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
-				if (monedaOrigen == null) { // Si se presionó el botón "Cancelar"
+			temperaturaOrigen = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
+				if (temperaturaOrigen == null) { // Si se presionó el botón "Cancelar"
 			        System.exit(0); // Termina el programa
 			    }else {
 			    	cantidad = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir", "Cantidad", JOptionPane.OK_CANCEL_OPTION));
@@ -36,22 +36,22 @@ public class CambioMoneda {
 				        //System.exit(0); // Termina el programa
 			    	return;
 				    }
-			    	monedaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
-						if (monedaDestino == null) { // Si se presionó el botón "Cancelar"
+			    	temperaturtaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
+						if (temperaturtaDestino == null) { // Si se presionó el botón "Cancelar"
 				        //System.exit(0); // Termina el programa
 						return;
 						}
 						break;
 			    	}
 			}
-		JOptionPane.showMessageDialog(null, cantidad + " " + monedaOrigen.getMoneda() + " es equivalente a " + resultado() + " " + monedaDestino.getMoneda());
+		JOptionPane.showMessageDialog(null, cantidad + " " + temperaturaOrigen.getMoneda() + " es equivalente a " + resultado() + " " + temperaturtaDestino.getMoneda());
 			
 		}
 	
 	private double resultado(){
 	    double valorIngresado = this.cantidad;
-	    double valorSeleccionado = monedaOrigen.getValor();
-	    double valorMultiplicador = monedaDestino.getValor();
+	    double valorSeleccionado = temperaturaOrigen.getValor();
+	    double valorMultiplicador = temperaturtaDestino.getValor();
 	    double resultado = (valorIngresado * valorSeleccionado) / valorMultiplicador;
 	    return resultado;
 	}
