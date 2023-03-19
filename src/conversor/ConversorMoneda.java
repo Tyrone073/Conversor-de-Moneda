@@ -30,6 +30,8 @@ public class ConversorMoneda {
 	
 	
 	public void mostrarInterfaz() {	
+		JOptionPane.showMessageDialog(null, "Bienvenido al conversor de monedas");
+		
 		while (true) {
 			monedaOrigen = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
 				if (monedaOrigen == null) { // Si se presionó el botón "Cancelar"

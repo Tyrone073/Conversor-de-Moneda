@@ -31,6 +31,9 @@ public class ConversorTemperatura {
 	
 	
 	public void mostrarInterfaz() {	
+		
+		JOptionPane.showMessageDialog(null, "Bienvenido al conversor de temperatura");
+		
 		while (true) {
 			temperaturaOrigen = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una temperatura que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
 				if (temperaturaOrigen == null) { // Si se presionó el botón "Cancelar"
