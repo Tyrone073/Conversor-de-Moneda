@@ -22,7 +22,11 @@ public class ConversorMoneda {
 	private Agrega monedaDestino;
 	private Agrega monedaOrigen;
 	private double cantidad;
-	 
+	private String nombre = "Conversor de Monedas";
+
+	public String getNombre() {
+		return nombre;
+	} 
 	
 	
 	public void mostrarInterfaz() {	
@@ -44,7 +48,7 @@ public class ConversorMoneda {
 						break;
 			    	}
 			}
-		JOptionPane.showMessageDialog(null, cantidad + " " + monedaOrigen.getMoneda() + " es equivalente a " + resultado() + " " + monedaDestino.getMoneda());
+		JOptionPane.showMessageDialog(null, cantidad + " " + monedaOrigen.getNombre() + " es equivalente a " + resultado() + " " + monedaDestino.getNombre());
 			
 		}
 	
@@ -52,11 +56,40 @@ public class ConversorMoneda {
 	    double valorIngresado = this.cantidad;
 	    double valorSeleccionado = monedaOrigen.getValor();
 	    double valorMultiplicador = monedaDestino.getValor();
+	    
+	   /* if (monedaDestino.equals("dolar")) {
+	    	valorMultiplicador = valorIngresado/valorMultiplicador;
+	    }*/
+	    /*if (monedaDestino.getNombre().equals("dolar") == monedaOrigen.getNombre().equals("dolar")) { // es para q se transforme a dolar sin q multipliq la cantiddad del dolar elebada(1.5)// no es nada de eso esto es para q multipliq por 1 si los valores son iguales y el dolar ya esta em 1.5 haci q al seleccionarlo va a multilpicar por ese
+	    	//valorMultiplicador = (valorSeleccionado * valorIngresado)/ valorMultiplicador;
+	    	valorMultiplicador = 1;
+	    }*/
+	    
+	    //double resultado = valorIngresado * valorMultiplicador;
+	    //double resultado = ((valorIngresado/100)/valorSeleccionado) * valorMultiplicador;
+	   // double resultado = ((valorIngresado/100)*valorSeleccionado) * valorMultiplicador;//*100
+	    
+	    //double resultado = (valorIngresado/valorSeleccionado) * valorMultiplicador; // valorMultiplicador;// solo funciona al transformar con dolares
 	    double resultado = (valorIngresado * valorSeleccionado) / valorMultiplicador;
+	    //(valorIngresado / valorOrigen) * valorDestino
+	    
+	    if (monedaDestino.getNombre() == monedaOrigen.getNombre()) { // es para q se transforme a dos monedas igual a la lisma cantidad
+	    	//valorMultiplicador = (valorSeleccionado * valorIngresado)/ valorMultiplicador;
+	    	//valorMultiplicador = 1;
+	    	resultado = valorIngresado * 1;
+	    }
+	    
+	    if (monedaDestino.getNombre().contains("dolar") || monedaOrigen.getNombre().contains("dolar")) {// esto funciona si es seleccionado dolar
+	    	  //resultado = valorIngresado * valorMultiplicador;
+	    	  resultado = (valorIngresado/valorSeleccionado) * valorMultiplicador;
+	    	}
+	    
 	    return resultado;
 	}
 
-}	
+	
+
+}	//1.2 *1.5)/23) * 
 		
 	/*public void mostrarInterfaz() {	
 			Moneda inicia = monedaOrigen = (Moneda) JOptionPane.showInputDialog(null, "Selecciona una moneda que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);

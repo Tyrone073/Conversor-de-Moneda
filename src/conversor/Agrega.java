@@ -17,7 +17,7 @@ public class Agrega {// madre q tiene el valor y q se rellena la moneda y su val
 		this.valor = valor;// * valor para q al seleccionar esa moneda multiplique hacia ella
 	}
 	
-	public String getMoneda() {// es para ver el nombre de la moneda creada, creo q el static es para q se haga visible en todas la clases
+	public String getNombre() {// es para ver el nombre de la moneda creada, creo q el static es para q se haga visible en todas la clases
 		return nombre;
 	}
 

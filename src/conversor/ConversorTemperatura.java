@@ -23,11 +23,16 @@ public class ConversorTemperatura {
 	private Agrega temperaturaOrigen;
 	private double cantidad;
 	 
+	private String nombre = "Conversor de Temperaturas" ;
+
+    public String getNombre() {
+        return nombre;
+    } 
 	
 	
 	public void mostrarInterfaz() {	
 		while (true) {
-			temperaturaOrigen = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
+			temperaturaOrigen = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una temperatura que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
 				if (temperaturaOrigen == null) { // Si se presionó el botón "Cancelar"
 			        System.exit(0); // Termina el programa
 			    }else {
@@ -36,7 +41,7 @@ public class ConversorTemperatura {
 				        //System.exit(0); // Termina el programa
 			    	return;
 				    }
-			    	temperaturtaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
+			    	temperaturtaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una temperatura a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
 						if (temperaturtaDestino == null) { // Si se presionó el botón "Cancelar"
 				        //System.exit(0); // Termina el programa
 						return;
@@ -44,7 +49,7 @@ public class ConversorTemperatura {
 						break;
 			    	}
 			}
-		JOptionPane.showMessageDialog(null, cantidad + " " + temperaturaOrigen.getMoneda() + " es equivalente a " + resultado() + " " + temperaturtaDestino.getMoneda());
+		JOptionPane.showMessageDialog(null, cantidad + " " + temperaturaOrigen.getNombre() + " es equivalente a " + resultado() + " " + temperaturtaDestino.getNombre());
 			
 		}
 	
@@ -55,6 +60,11 @@ public class ConversorTemperatura {
 	    double resultado = (valorIngresado * valorSeleccionado) / valorMultiplicador;
 	    return resultado;
 	}
+
+	/*public void getConversores() {
+		// TODO Auto-generated method stub
+		return mostrarInterfaz();
+	}*/
 
 }	
 		

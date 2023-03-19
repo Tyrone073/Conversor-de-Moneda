@@ -13,12 +13,14 @@ public class Ejecutable {
 	    
 	    private static void metodo0() {
 	    	//JOptionPane.showInputDialog(null, "Selecciona un tipo de conversor ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
-	    	metodo1();
+	    	Conversores conversores = new Conversores();
+	    	conversores.mostrarMenu();
+	    	//metodo1();
 	    	int finalizar = JOptionPane.showConfirmDialog(null, "desea salir", "Confirmar salida", JOptionPane.YES_NO_OPTION);
 		    	if (finalizar == JOptionPane.YES_OPTION) { // Si se presionó el botón "Cancelar"
 			        System.exit(0); // Termina el programa
 			    }else {
-			    	 metodo1();
+			    	 metodo0();
 			    }
 		    }
 	    
