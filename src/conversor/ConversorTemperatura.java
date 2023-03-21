@@ -40,9 +40,15 @@ public class ConversorTemperatura {
 					return; // Termina el programa
 			    }
 				while (true) {
-			    	cantidad = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir", "Cantidad", JOptionPane.OK_CANCEL_OPTION));
-			    	if (cantidad == JOptionPane.CANCEL_OPTION) { // Si se presionó el botón "Cancelar"
-			    		continue;
+					String cuadroInput = JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir:", "Cantidad", JOptionPane.OK_CANCEL_OPTION);
+				    if (cuadroInput == null) {
+				        break; // Si el usuario presiona "Cancelar" o "Cerrar", salir del bucle
+				    }
+				    if (!cuadroInput.matches("^(?:0|[1-9]\\d*)(?:\\.\\d\\d?)?$")) {
+				    	JOptionPane.showMessageDialog(null, "valor no valido solo se permite numeros");
+				    	continue;
+				    }else{
+				    	cantidad = Double.parseDouble(cuadroInput);
 				    }
 			    	temperaturaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una temperatura a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
 						if (temperaturaDestino == null) { // Si se presionó el botón "Cancelar"
@@ -51,7 +57,8 @@ public class ConversorTemperatura {
 						JOptionPane.showMessageDialog(null, cantidad + " " + temperaturaOrigen.getNombre() + " es equivalente a " + resultado() + " " + temperaturaDestino.getNombre());
 						break;
 			    	}
-				return;
+				//return;
+				break;
 			}
 			
 		}

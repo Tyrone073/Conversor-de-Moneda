@@ -35,6 +35,10 @@ public class Conversores {
 	    if (Opcion.equals(ConversorDeTemperatura)) {
 	    	new ConversorTemperatura().mostrarInterfaz();
 	    }
+	   // if (Opcion == null) { aun no se agrega esto
+	   //     JOptionPane.showMessageDialog(null, "Operación cancelada");
+	        //break;
+	   // }
 	}
 	
 }

@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 //import ejecutor.JComboBox;
 
@@ -21,7 +22,7 @@ public class ConversorMoneda {
 	
 	private Agrega monedaDestino;
 	private Agrega monedaOrigen;
-	private double cantidad;
+	private double cantidad ;
 	private String nombre = "Conversor de Monedas";
 
 	public String getNombre() {
@@ -38,20 +39,51 @@ public class ConversorMoneda {
 					return; // esta parte esta bien ya q si se preciona canselar va a correr y preguntar el int finalizar
 			    }
 				while (true) {
-					cantidad = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir", "Cantidad", JOptionPane.OK_CANCEL_OPTION));
-			    	if (cantidad == JOptionPane.CANCEL_OPTION) { // Si se presionó el botón "Cancelar"
-			    		continue;
-			    		
+					String cuadroInput = JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir:", "Cantidad", JOptionPane.OK_CANCEL_OPTION);
+				    if (cuadroInput == null) {
+				        break; // Si el usuario presiona "Cancelar" o "Cerrar", salir del bucle
 				    }
+				    if (!cuadroInput.matches("^(?:0|[1-9]\\d*)(?:\\.\\d\\d?)?$")) {
+				    	JOptionPane.showMessageDialog(null, "valor no valido solo se permite numeros");
+				    	continue;
+				    }else{
+				    	cantidad = Double.parseDouble(cuadroInput);
+				    }
+				    	//cantidad = Double.parseDouble(cuadroInput);
+				        //entradaValida = true;
+				   // } else {
+				       // JOptionPane.showMessageDialog(null, "La entrada '" + cuadroInput + "' no es válida. Ingresa un valor numérico.");
+				   // }
+				   // if (entradaValida) {
+				   //     break; // Si la entrada es válida, salir del bucle
+				  //  }
+					
+					
+					/* while (!cuadroInput.matches("\\d+") || cantidad == 0.00) {
+						    cuadroInput = JOptionPane.showInputDialog(null, "Solo se permiten números y valores diferente a 0.00. Introduce un número válido:");
+						   
+						    // Verificar si se cancela la operación
+						    /*if (cuadroInput == null) {
+						        JOptionPane.showMessageDialog(null, "Operación cancelada");
+						        break;}*/
+						   /* if (cantidad == 0.00) {
+					        JOptionPane.showMessageDialog(null, "Escribe una cantidad");
+					        continue;
+						}*/
+					     
+					    
+					  //  }*/ 
 			    	while (true) {
 				    monedaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
 				    if (monedaDestino == null) { // Si se presionó el botón "Cancelar"
-				        continue;				       
+				       // continue input;	
+				    	break;// para q cierre el problema
 				    	}
 			        JOptionPane.showMessageDialog(null, cantidad + " " + monedaOrigen.getNombre() + " es equivalente a " + resultado() + " " + monedaDestino.getNombre());
 			        break;
 			    	}
 			    	return;
+			    	//break;
 				}	
 		}	
 	}
