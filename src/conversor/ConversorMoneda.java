@@ -38,7 +38,7 @@ public class ConversorMoneda {
 				if (monedaOrigen == null) { // Si se presionó el botón "Cancelar"
 					return; // esta parte esta bien ya q si se preciona canselar va a correr y preguntar el int finalizar
 			    }
-				while (true) {
+				while (true) {// este si sirve al precionar cancel si regresa a origen
 					String cuadroInput = JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir:", "Cantidad", JOptionPane.OK_CANCEL_OPTION);
 				    if (cuadroInput == null) {
 				        break; // Si el usuario presiona "Cancelar" o "Cerrar", salir del bucle
@@ -49,34 +49,10 @@ public class ConversorMoneda {
 				    }else{
 				    	cantidad = Double.parseDouble(cuadroInput);
 				    }
-				    	//cantidad = Double.parseDouble(cuadroInput);
-				        //entradaValida = true;
-				   // } else {
-				       // JOptionPane.showMessageDialog(null, "La entrada '" + cuadroInput + "' no es válida. Ingresa un valor numérico.");
-				   // }
-				   // if (entradaValida) {
-				   //     break; // Si la entrada es válida, salir del bucle
-				  //  }
-					
-					
-					/* while (!cuadroInput.matches("\\d+") || cantidad == 0.00) {
-						    cuadroInput = JOptionPane.showInputDialog(null, "Solo se permiten números y valores diferente a 0.00. Introduce un número válido:");
-						   
-						    // Verificar si se cancela la operación
-						    /*if (cuadroInput == null) {
-						        JOptionPane.showMessageDialog(null, "Operación cancelada");
-						        break;}*/
-						   /* if (cantidad == 0.00) {
-					        JOptionPane.showMessageDialog(null, "Escribe una cantidad");
-					        continue;
-						}*/
-					     
-					    
-					  //  }*/ 
 			    	while (true) {
 				    monedaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
 				    if (monedaDestino == null) { // Si se presionó el botón "Cancelar"
-				       // continue input;	
+				        //continue;	
 				    	break;// para q cierre el problema
 				    	}
 			        JOptionPane.showMessageDialog(null, cantidad + " " + monedaOrigen.getNombre() + " es equivalente a " + resultado() + " " + monedaDestino.getNombre());

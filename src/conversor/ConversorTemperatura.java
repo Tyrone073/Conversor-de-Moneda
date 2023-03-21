@@ -50,6 +50,7 @@ public class ConversorTemperatura {
 				    }else{
 				    	cantidad = Double.parseDouble(cuadroInput);
 				    }
+				    while (true) {
 			    	temperaturaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una temperatura a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
 						if (temperaturaDestino == null) { // Si se presionó el botón "Cancelar"
 							continue;
@@ -57,12 +58,12 @@ public class ConversorTemperatura {
 						JOptionPane.showMessageDialog(null, cantidad + " " + temperaturaOrigen.getNombre() + " es equivalente a " + resultado() + " " + temperaturaDestino.getNombre());
 						break;
 			    	}
-				//return;
-				break;
+				return;
+				//break; este es para repetir el ciclo de este conversor y es para testeo nomas
 			}
 			
 		}
-	
+	}
 	private double resultado(){
 	    double resultados = 0 ;
 	    if (temperaturaOrigen.getNombre().equals("Celsius")) {
