@@ -9,7 +9,7 @@ public class ListaMonedas {
     private Collection<Agrega> monedaList = new ArrayList<>();
 
     public ListaMonedas() {
-        Agrega dolar = new Agrega("dolar", 1.50);//1.0
+        Agrega dolar = new Agrega("dolar", 1.50);//1.0//
         Agrega euro = new Agrega("Euro", 1.41);//1.40//0.94  0.813399   1.2200985
         Agrega libra = new Agrega("Libra esterlina", 1.23);//0.82
         Agrega yen = new Agrega("Yen japones", 198);//132

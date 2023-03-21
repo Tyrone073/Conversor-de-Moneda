@@ -18,7 +18,7 @@ public class Conversores {
 	
 	String ConversorDeMoneda = new String("conversor de monedas");
 	String ConversorDeTemperatura = new String("conversor de Temperaturas");
-	Object Frase;
+	Object Opcion;
 		
 	public Conversores() {
 	
@@ -28,11 +28,11 @@ public class Conversores {
     }
 	
 	public void mostrarMenu() {
-		 Frase = JOptionPane.showInputDialog(null, "Selecciona un tipo de conversor", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, listaDeConversores, listaDeConversores[0]);
-	    if (Frase.equals(ConversorDeMoneda)) {
+		 Opcion = JOptionPane.showInputDialog(null, "Selecciona un tipo de conversor", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, listaDeConversores, listaDeConversores[0]);
+	    if (Opcion.equals(ConversorDeMoneda)) {
 	    	new ConversorMoneda().mostrarInterfaz();
 	    }
-	    if (Frase.equals(ConversorDeTemperatura)) {
+	    if (Opcion.equals(ConversorDeTemperatura)) {
 	    	new ConversorTemperatura().mostrarInterfaz();
 	    }
 	}

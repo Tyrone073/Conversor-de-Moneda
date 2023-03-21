@@ -81,7 +81,7 @@ public class ConversorMoneda {
 	    	resultado = valorIngresado * 1;
 	    }
 	    
-	    if (monedaDestino.getNombre().contains("dolar") || monedaOrigen.getNombre().contains("dolar")) {// esto funciona si es seleccionado dolar
+	    if (monedaDestino.getNombre().contains("dolar") || monedaOrigen.getNombre().contains("dolar")) {// esto funciona si es seleccionado dolar ye el || es un O
 	    	  //resultado = valorIngresado * valorMultiplicador;
 	    	  resultado = (valorIngresado/valorSeleccionado) * valorMultiplicador;
 	    	}
