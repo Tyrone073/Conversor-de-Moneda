@@ -29,30 +29,32 @@ public class ConversorMoneda {
 	} 
 	
 	
-	public void mostrarInterfaz() {	
-		JOptionPane.showMessageDialog(null, "Bienvenido al conversor de monedas");
+	public void mostrarInterfaz() {	// este codigo sirve 
+		JOptionPane.showMessageDialog(null, "Bienvenido al conversor de monedas"); 
 		
 		while (true) {
 			monedaOrigen = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
 				if (monedaOrigen == null) { // Si se presionó el botón "Cancelar"
-			        System.exit(0); // Termina el programa
-			    }else {
-			    	cantidad = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir", "Cantidad", JOptionPane.OK_CANCEL_OPTION));
+					return; // esta parte esta bien ya q si se preciona canselar va a correr y preguntar el int finalizar
+			    }
+				while (true) {
+					cantidad = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir", "Cantidad", JOptionPane.OK_CANCEL_OPTION));
 			    	if (cantidad == JOptionPane.CANCEL_OPTION) { // Si se presionó el botón "Cancelar"
-				        //System.exit(0); // Termina el programa
-			    	return;
+			    		continue;
+			    		
 				    }
-			    	monedaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
-						if (monedaDestino == null) { // Si se presionó el botón "Cancelar"
-				        //System.exit(0); // Termina el programa
-						return;
-						}
-						break;
+			    	while (true) {
+				    monedaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
+				    if (monedaDestino == null) { // Si se presionó el botón "Cancelar"
+				        continue;				       
+				    	}
+			        JOptionPane.showMessageDialog(null, cantidad + " " + monedaOrigen.getNombre() + " es equivalente a " + resultado() + " " + monedaDestino.getNombre());
+			        break;
 			    	}
-			}
-		JOptionPane.showMessageDialog(null, cantidad + " " + monedaOrigen.getNombre() + " es equivalente a " + resultado() + " " + monedaDestino.getNombre());
-			
-		}
+			    	return;
+				}	
+		}	
+	}
 	
 	private double resultado(){
 	    double valorIngresado = this.cantidad;
@@ -105,6 +107,17 @@ public class ConversorMoneda {
 					}
 		    }*/
 		
-		
+		/*else {
+			    	cantidad = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir", "Cantidad", JOptionPane.OK_CANCEL_OPTION));
+			    	if (cantidad == JOptionPane.CANCEL_OPTION) { // Si se presionó el botón "Cancelar"
+			    		continue;
+				    }
+			    	monedaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.OK_OPTION, null, lista, lista [0]);
+						/*if (monedaDestino == null) { // Si se presionó el botón "Cancelar"
+				        //System.exit(0); // Termina el programa
+						return;
+						}*/
+						/*break;
+			    	}*/
 		
 		
