@@ -49,15 +49,15 @@ public class ConversorMoneda {
 				    }else{
 				    	cantidad = Double.parseDouble(cuadroInput);
 				    }
-			    	while (true) {
+			    	//while (true) {
 				    monedaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
 				    if (monedaDestino == null) { // Si se presionó el botón "Cancelar"
-				        //continue;	
-				    	break;// para q cierre el problema
+				        continue;	
+				    	//;// para q cierre el problema
 				    	}
 			        JOptionPane.showMessageDialog(null, cantidad + " " + monedaOrigen.getNombre() + " es equivalente a " + resultado() + " " + monedaDestino.getNombre());
-			        break;
-			    	}
+			       // break;
+			    	//}
 			    	return;
 			    	//break;
 				}	

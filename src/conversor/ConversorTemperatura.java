@@ -50,15 +50,17 @@ public class ConversorTemperatura {
 				    }else{
 				    	cantidad = Double.parseDouble(cuadroInput);
 				    }
-				    while (true) {
+				  //  while (true) {
 			    	temperaturaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una temperatura a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
 						if (temperaturaDestino == null) { // Si se presionó el botón "Cancelar"
 							continue;
+							//break;
+							//return cuadroInput;
 						}
 						JOptionPane.showMessageDialog(null, cantidad + " " + temperaturaOrigen.getNombre() + " es equivalente a " + resultado() + " " + temperaturaDestino.getNombre());
-						break;
-			    	}
-				return;
+						//break;
+			    	//}
+				return;//para q termine y regrese al inicio
 				//break; este es para repetir el ciclo de este conversor y es para testeo nomas
 			}
 			
