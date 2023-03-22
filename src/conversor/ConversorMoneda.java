@@ -2,7 +2,9 @@ package conversor;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import javax.swing.JComboBox;
@@ -18,16 +20,13 @@ public class ConversorMoneda {
 
 	ListaMonedas listaMonedas = new ListaMonedas();//esto es para crear una intancia de la lista
 	Object[] lista = listaMonedas.getMonedaList().toArray();//aqui se transforma esa intancia para q se pueda utilizar en la seleccion
-	
+	// private Collection<Agrega> actualizacionEuro = new ArrayList<>();
+	// Collection<Agrega> NuevoEuro = listaMonedas.getActualizacionEuro();
 	
 	private Agrega monedaDestino;
 	private Agrega monedaOrigen;
 	private double cantidad ;
-	private String nombre = "Conversor de Monedas";
-
-	public String getNombre() {
-		return nombre;
-	} 
+	
 	
 	
 	public void mostrarInterfaz() {	// este codigo sirve 
@@ -81,20 +80,69 @@ public class ConversorMoneda {
 	    //double resultado = ((valorIngresado/100)/valorSeleccionado) * valorMultiplicador;
 	   // double resultado = ((valorIngresado/100)*valorSeleccionado) * valorMultiplicador;//*100
 	    
-	    //double resultado = (valorIngresado/valorSeleccionado) * valorMultiplicador; // valorMultiplicador;// solo funciona al transformar con dolares
-	    double resultado = (valorIngresado * valorSeleccionado) / valorMultiplicador;
+	    double resultado = (valorIngresado/valorSeleccionado) * valorMultiplicador; // valorMultiplicador;// solo funciona al transformar con dolares
+	    //double resultado = (valorIngresado * valorSeleccionado) / valorMultiplicador;
+	    //double resultado = valorIngresado;
 	    //(valorIngresado / valorOrigen) * valorDestino
 	    
 	    if (monedaDestino.getNombre() == monedaOrigen.getNombre()) { // es para q se transforme a dos monedas igual a la lisma cantidad
 	    	//valorMultiplicador = (valorSeleccionado * valorIngresado)/ valorMultiplicador;
 	    	//valorMultiplicador = 1;
-	    	resultado = valorIngresado * 1;
+	    	resultado = valorIngresado;
 	    }
 	    
-	    if (monedaDestino.getNombre().contains("dolar") || monedaOrigen.getNombre().contains("dolar")) {// esto funciona si es seleccionado dolar ye el || es un O
+	    /*if (monedaDestino.getNombre().contains("Dolar") && monedaOrigen.getNombre().contains("Dolar")) {// esto funciona si es seleccionado dolar ye el || es un O
 	    	  //resultado = valorIngresado * valorMultiplicador;
 	    	  resultado = (valorIngresado/valorSeleccionado) * valorMultiplicador;
-	    	}
+	    	}*/
+	    if (monedaOrigen.getNombre().equals("Euro")){ /*|| monedaOrigen.getNombre().contains("Libra esterlina")*/
+		       /* if (monedaDestino.getNombre().equals("Dolar")) {
+		            resultado =  this.cantidad * 1.09;
+
+		        } else*/ if (monedaDestino.getNombre().equals("Libra esterlina")) {
+		            resultado =  this.cantidad * 0.88;
+		        } else if (monedaDestino.getNombre().equals("Yen japones")) {
+		            resultado =  this.cantidad * 143;
+		        } else if (monedaDestino.getNombre().equals("Won surcoreano")) {
+		            resultado =  this.cantidad * 1409;
+		        }	
+	    }
+	    if (monedaOrigen.getNombre().equals("Libra esterlina")){ /*|| monedaOrigen.getNombre().contains("Libra esterlina")*/
+	       /* if (monedaDestino.getNombre().equals("Dolar")) {
+	            resultado =  this.cantidad * 1.23;
+
+	        } else*/ if (monedaDestino.getNombre().equals("Euro")) {
+	            resultado =  this.cantidad * 1.13;
+	        } else if (monedaDestino.getNombre().equals("Yen japones")) {
+	            resultado =  this.cantidad * 161;
+	        } else if (monedaDestino.getNombre().equals("Won surcoreano")) {
+	            resultado =  this.cantidad * 1593;
+	        }	
+	    }
+	    if (monedaOrigen.getNombre().equals("Yen japones")){ /*|| monedaOrigen.getNombre().contains("Libra esterlina")*/
+	        /*if (monedaDestino.getNombre().equals("Dolar")) {
+	            resultado =  this.cantidad * 0.0076;
+
+	        } else */if (monedaDestino.getNombre().equals("Euro")) {
+	            resultado =  this.cantidad * 0.0070;
+	        } else if (monedaDestino.getNombre().equals("Libra esterlina")) {
+	            resultado =  this.cantidad * 0.0062;
+	        } else if (monedaDestino.getNombre().equals("Won surcoreano")) {
+	            resultado =  this.cantidad * 10;
+	        }	
+	    }
+	    if (monedaOrigen.getNombre().equals("Won surcoreano")){ /*|| monedaOrigen.getNombre().contains("Libra esterlina")*/
+	       /* if (monedaDestino.getNombre().equals("Dolar")) {
+	            resultado =  this.cantidad * 0.00077;
+
+	        } else*/ if (monedaDestino.getNombre().equals("Euro")) {
+	            resultado =  this.cantidad * 0.00071;
+	        } else if (monedaDestino.getNombre().equals("Libra esterlina")) {
+	            resultado =  this.cantidad * 0.00063;
+	        } else if (monedaDestino.getNombre().equals("Yen japones")) {
+	            resultado =  this.cantidad * 0.1;
+	        }	
+	    }
 	    
 	    return resultado;
 	}
