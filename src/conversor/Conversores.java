@@ -28,17 +28,18 @@ public class Conversores {
     }
 	
 	public void mostrarMenu() {
-		 Opcion = JOptionPane.showInputDialog(null, "Selecciona un tipo de conversor", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, listaDeConversores, listaDeConversores[0]);
-	    if (Opcion.equals(ConversorDeMoneda)) {
-	    	new ConversorMoneda().mostrarInterfaz();
-	    }
-	    if (Opcion.equals(ConversorDeTemperatura)) {
-	    	new ConversorTemperatura().mostrarInterfaz();
-	    }
-	   // if (Opcion == null) { aun no se agrega esto
-	   //     JOptionPane.showMessageDialog(null, "Operación cancelada");
-	        //break;
-	   // }
-	}
-	
+		 Opcion = JOptionPane.showInputDialog(null, "Selecciona un tipo de conversor", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, listaDeConversores, listaDeConversores[0]);
+		 
+		 if (Opcion != null) {
+		        if (Opcion.equals(ConversorDeMoneda)) {
+		            new ConversorMoneda().mostrarInterfaz();
+		        } else if (Opcion.equals(ConversorDeTemperatura)) {
+		            new ConversorTemperatura().mostrarInterfaz();
+		        }
+		    } else {
+		        //JOptionPane.showMessageDialog(null, "Operación cancelada");
+		       // System.exit(0);
+		        return;
+		    }   
+	}	
 }
