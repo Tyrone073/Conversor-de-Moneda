@@ -8,7 +8,7 @@ public class ListaMonedas {
 	
     private Collection<Agrega> monedaList = new ArrayList<>();
 
-    public ListaMonedas() {
+    public ListaMonedas() {//estos valores como los del resultado() son del 22/03/2023
         Agrega dolar = new Agrega("dolar", 2);//1.0//
         Agrega euro = new Agrega("Euro", 1.84);//1.40//0.94  0.813399   1.2200985
         Agrega libra = new Agrega("Libra esterlina", 1.63);//0.82

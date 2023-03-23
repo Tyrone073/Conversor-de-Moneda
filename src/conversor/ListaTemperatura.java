@@ -9,8 +9,8 @@ public class ListaTemperatura {
     private Collection<Agrega> temperaturaList = new ArrayList<>();
 
     public ListaTemperatura() {
-        Agrega celsius = new Agrega("Celsius",273.15);// este se suma o se resta con kelvin
-        Agrega fahrenheit = new Agrega("Fahrenheit", 459.67);// se suma o resta con kelvin
+        Agrega celsius = new Agrega("Celsius",273.15);// estos valores esran de referencias y nu los use llamandolos sino q los puse directamente
+        Agrega fahrenheit = new Agrega("Fahrenheit", 459.67);
         Agrega kelvin = new Agrega("Kelvin",273.15);
        
         temperaturaList.add(celsius);

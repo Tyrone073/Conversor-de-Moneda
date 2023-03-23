@@ -15,34 +15,27 @@ import javax.swing.JPanel;
 
 public class ConversorTemperatura {
 
-	ListaTemperatura listaTemperatura = new ListaTemperatura();//esto es para crear una intancia de la lista
-	Object[] lista = listaTemperatura.getTemperaturaList().toArray();//aqui se transforma esa intancia para q se pueda utilizar en la seleccion
+	ListaTemperatura listaTemperatura = new ListaTemperatura();
+	Object[] lista = listaTemperatura.getTemperaturaList().toArray();
 	
 	
 	private Agrega temperaturaDestino;
 	private Agrega temperaturaOrigen;
 	private double cantidad;
 	 
-	/*private String nombre = "Conversor de Temperaturas" ;
-
-    public String getNombre() {
-        return nombre;
-    } */
-	
-	
 	public void mostrarInterfaz() {	
 		
 		JOptionPane.showMessageDialog(null, "Bienvenido al conversor de temperatura");
 		
 		while (true) {
 			temperaturaOrigen = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una temperatura que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
-				if (temperaturaOrigen == null) { // Si se presionó el botón "Cancelar"
-					return; // Termina el programa
+				if (temperaturaOrigen == null) {
+					return;
 			    }
 				while (true) {
 					String cuadroInput = JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir:", "Cantidad", JOptionPane.OK_CANCEL_OPTION);
 				    if (cuadroInput == null) {
-				        break; // Si el usuario presiona "Cancelar" o "Cerrar", salir del bucle
+				        break;
 				    }
 				    if (!cuadroInput.matches("^(?:0|[1-9]\\d*)(?:\\.\\d\\d?)?$")) {
 				    	JOptionPane.showMessageDialog(null, "valor no valido solo se permite numeros");
@@ -52,7 +45,7 @@ public class ConversorTemperatura {
 				    }
 				  //  while (true) {
 			    	temperaturaDestino = (Agrega) JOptionPane.showInputDialog(null, "Selecciona una temperatura a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
-						if (temperaturaDestino == null) { // Si se presionó el botón "Cancelar"
+						if (temperaturaDestino == null) {
 							continue;
 							//break;
 							//return cuadroInput;
@@ -90,69 +83,9 @@ public class ConversorTemperatura {
 	            resultados =  ((this.cantidad - 273.15) * 9/5 ) + 32;
 	        }
 	    } 
-	    if (temperaturaDestino.getNombre() == temperaturaOrigen.getNombre()) { // es para q se transforme a dos monedas igual a la lisma cantidad
-	    	//valorMultiplicador = (valorSeleccionado * valorIngresado)/ valorMultiplicador;
-	    	//valorMultiplicador = 1;
+	    if (temperaturaDestino.getNombre() == temperaturaOrigen.getNombre()) {
 	    	resultados = this.cantidad;
 	    }
 	    return resultados;
 	}
-}
-	    
-	  
-	    /* if ( valorSeleccionado.equals("celsius") == valorMultiplicador.equals("kelvin") ) {
-	    	// hacer el ejercicio
-	    	resultados = valorIngresado +  273.15;
-	    	//return resultados;
-	    }else if ( valorSeleccionado.equals("celsius") || valorMultiplicador.equals("fahrenheit") ) {
-	    	// hacer el ejercicio
-	    	resultados = valorIngresado *9/5 + 32;
-	    	//return resultados;
-	    }
-	   
-	   /*  if ( temperaturaOrigen.getNombre().contains("fahrenheit") && temperaturaDestino.getNombre().contains("celsius") ) {
-	    	// hacer el ejercicio
-	    	resultados = (valorIngresado - 32) * (5/9);
-	    	return resultados;
-	    }
-	    if ( temperaturaOrigen.getNombre().equals("fahrenheit") && temperaturaDestino.getNombre().contains("fahrenheit") ) {
-	    	// hacer el ejercicio
-	    	resultados = valorIngresado *9/5 + 32;
-	    	return resultados;
-	    }
-	    if ( temperaturaOrigen.getNombre().contains("kelvin") && temperaturaDestino.getNombre().contains("fahrenheit") ) {
-	    	// hacer el ejercicio
-	    	resultados = valorIngresado *9/5 + 32;
-	    	return resultados;
-	    }
-	    if ( temperaturaOrigen.getNombre().contains("kelvin") && temperaturaDestino.getNombre().contains("fahrenheit") ) {
-	    	// hacer el ejercicio
-	    	resultados = valorIngresado *9/5 + 32;
-	    	return resultados;
-	    }
-	    //return resultado;*/
-		//return resultados;
-	
-
-	/*public void getConversores() {
-		// TODO Auto-generated method stub
-		return mostrarInterfaz();
-	}*/
-
-
-		
-	/*public void mostrarInterfaz() {	
-			Moneda inicia = monedaOrigen = (Moneda) JOptionPane.showInputDialog(null, "Selecciona una moneda que se va a convertir ", "Lista de opciones", JOptionPane.OK_CANCEL_OPTION, null, lista, lista [0]);
-			if (monedaOrigen == null) { // Si se presionó el botón "Cancelar"
-		        System.exit(0); // Termina el programa
-		    }else {
-		    	cantidad = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingresa la cantidad a convertir", "Cantidad", JOptionPane.OK_CANCEL_OPTION));
-		    	monedaDestino = (Moneda) JOptionPane.showInputDialog(null, "Selecciona una moneda a convertir", "Lista de opciones", JOptionPane.QUESTION_MESSAGE, null, lista, lista [0]);
-					if (monedaDestino == null) { // Si se presionó el botón "Cancelar"
-			        System.exit(0); // Termina el programa
-					}
-		    }*/
-		
-		
-		
-		
+}	
