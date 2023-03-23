@@ -1,6 +1,6 @@
 # Conversores de moneda y temperatura
 
-![conversor](gifReadme/conversor.gif)
+![conversor](gifReadme/README.gif)
 
 #challengeoneconversorlatam4
 Este proyecto incluye dos convertidores: uno para convertir entre diferentes monedas y otro para convertir entre diferentes unidades de temperatura.
