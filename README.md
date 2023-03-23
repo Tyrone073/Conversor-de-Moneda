@@ -19,7 +19,7 @@ Este proyecto incluye dos convertidores: uno para convertir entre diferentes mon
 
 1. Selecciona la moneda de origen y la moneda de destino en los menús desplegables correspondientes.
 2. Ingresa la cantidad de la moneda de origen que deseas convertir en el campo de texto.
-3. Haz clic en el botón "Convertir" para obtener el resultado de la conversión.
+3. Haz clic en el botón "ok" para continuar y obtener el resultado de la conversión.
 
 ### Nota
 
@@ -37,7 +37,7 @@ Los tipos de cambio utilizados en este conversor fueron obtenidos el día 22/3/2
 
 1. Selecciona la unidad de temperatura de origen y la unidad de temperatura de destino en los menús desplegables correspondientes.
 2. Ingresa la temperatura de origen que deseas convertir en el campo de texto.
-3. Haz clic en el botón "Convertir" para obtener el resultado de la conversión.
+3. Haz clic en el botón "ok" para continuar y obtener el resultado de la conversión.
 
 ### Fórmulas de conversión
 
